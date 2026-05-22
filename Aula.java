@@ -1,42 +1,21 @@
-package utp.edu.pe.ProyectoDP.Domain;
-import jakarta.persistence.*;
-import lombok.*;
+package utp.edu.pe.ProyectoDP.Entity;
 
-@Entity
-@Table(name = "aulas")
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 
 public class Aula {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "numero")
+    private int codigoAula;
     private String numero;
-
-    @Column(name = "capacidad")
     private int capacidad;
-
-    @Column(name = "pabellon")
     private String pabellon;
 
-    // Método personalizado
-    public void mostrarAula() {
-
-        System.out.println("===== AULA =====");
-
-        System.out.println("Número: " + numero);
-
-        System.out.println("Capacidad: "
-                + capacidad);
-
-        System.out.println("Pabellón: "
-                + pabellon);
     }
-}
